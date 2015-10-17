@@ -1,4 +1,4 @@
-angular.module("DCH").config(function ($stateProvider, $urlRouterProvider) {
+angular.module("DCH").config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise("/");
 
@@ -13,4 +13,4 @@ angular.module("DCH").config(function ($stateProvider, $urlRouterProvider) {
         controller: 'WelcomeCtrl',
         templateUrl: "js/welcome/welcome.html"
       })
-  });
+  }]);
