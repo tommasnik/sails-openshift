@@ -56,13 +56,13 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
-  someMongodbServer: {
+  mongoDb: {
     adapter: 'sails-mongo',
-    host: 'localhost',
-    port: 27017,
-    // user: 'username',
-    // password: 'password',
-    // database: 'your_mongo_db_name_here'
+    host: process.env.OPENSHIFT_MONGODB_DB_HOST || 'localhost',
+    port: process.env.OPENSHIFT_MONGODB_DB_PORT || 27017,
+    user: process.env.OPENSHIFT_MONGODB_DB_USERNAME,
+    password: process.env.OPENSHIFT_MONGODB_DB_PASSWORD,
+    database: process.env.OPENSHIFT_APP_NAME || 'chovka'
   },
 
   /***************************************************************************
